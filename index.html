@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ica Fresa, fresas con crema y antojos dulces."
+    />
+    <title>Ica Fresa | Fresas con crema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Ica Fresa, inicio">
+        <span><img src="img/icon.png" alt="" /></span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <a href="#inicio"><span>Inicio</span></a>
+        <a href="#menu"><span>Menú</span></a>
+        <a href="#locales"><span>Locales</span></a>
+        <a href="#fidelidad"><span>Contacto</span></a>
+      </nav>
+
+      <a class="cart-pill" href="#pedido" aria-label="Abrir pedido">
+        🛒
+        <em>0</em>
+      </a>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <span class="hero-wave hero-wave-top-left" aria-hidden="true"></span>
+        <span class="hero-wave hero-wave-top-right" aria-hidden="true"></span>
+        <span class="hero-wave hero-wave-bottom-left" aria-hidden="true"></span>
+        <div class="hero-copy">
+          <img
+            class="hero-title-image"
+            src="img/frs.png"
+            alt="Ica Fresa"
+          />
+          <button class="store-status is-open" type="button" aria-pressed="true">
+            <span class="status-light" aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Abierto</span>
+              <small>1 p. m. - 10 p. m.</small>
+            </span>
+          </button>
+        </div>
+
+        <div class="hero-art">
+          <span class="cup"></span>
+        </div>
+      </section>
+
+      <section id="menu" class="catalog">
+        <div class="section-title">
+          <div>
+            <p>HECHO CON MUCHO AMOR</p>
+            <h2>✨ Nuestro menú</h2>
+          </div>
+          <div class="store-switch" aria-label="Seleccionar local">
+            <input checked type="radio" name="store" id="ica" />
+            <label for="ica">⌖ Ica</label>
+            <input type="radio" name="store" id="parcona" />
+            <label for="parcona">⌖ Parcona</label>
+          </div>
+        </div>
+
+        <div class="catalog-layout">
+          <div class="catalog-products">
+            <div class="filters">
+          <button class="selected" type="button" aria-pressed="true">Todos</button>
+          <button type="button" aria-pressed="false">Fresas con crema</button>
+          <button type="button" aria-pressed="false">Waffles</button>
+          <button type="button" aria-pressed="false">Crepes</button>
+          <button type="button" aria-pressed="false">Mini donas</button>
+          <button type="button" aria-pressed="false">Bebidas</button>
+          </div>
+
+          <div class="grid">
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://infobae.com/new-resizer/IIwfQV1BrzHYiqoVBYyDbHfIvNc=/arc-anglerfish-arc2-prod-infobae/public/TWP6YXWPVZGMHH7TUIIOGCR5PU.jpg"
+                alt="Vaso clásico de fresas con crema"
+              />
+              <span>Favorito</span>
+            </div>
+            <div class="pbody">
+              <small>Fresas con crema</small>
+              <h3>Vaso Clásico</h3>
+              <p>Fresas frescas, crema de la casa y topping.</p>
+              <div>
+                <strong>S/ 11.50</strong>
+                <a class="add-cart" href="#carrito">Agregar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHy15fWJfdVRvCq7KBlQmzkWCfT8XK8HRZ9Bpp-z8WVHTcaISNVfg8R4Cm&s=10"
+                alt="Fresas con Nutella"
+              />
+              <span>Más pedido</span>
+            </div>
+            <div class="pbody">
+              <small>Fresas con crema</small>
+              <h3>Fresas con Nutella</h3>
+              <p>La combinación más irresistible.</p>
+              <div>
+                <strong>S/ 15.50</strong>
+                <a href="#personalizar">Personalizar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://dcdn-us.mitiendanube.com/stores/001/309/364/products/oreo1-65726168dab7ff038d16038939405665-1024-1024.jpg"
+                alt="Milkshake Oreo"
+              />
+            </div>
+            <div class="pbody">
+              <small>Bebidas</small>
+              <h3>Milkshake Oreo</h3>
+              <p>Cremoso batido con galleta Oreo.</p>
+              <div>
+                <strong>S/ 12.00</strong>
+                <a href="#personalizar">Personalizar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=900&q=85"
+                alt="Waffle clásico"
+              />
+            </div>
+            <div class="pbody">
+              <small>Waffles</small>
+              <h3>Waffle Clásico</h3>
+              <p>Waffle doradito con fruta y salsa.</p>
+              <div>
+                <strong>S/ 12.50</strong>
+                <a href="#personalizar">Personalizar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=900&q=85"
+                alt="Crepe de Nutella"
+              />
+            </div>
+            <div class="pbody">
+              <small>Crepes</small>
+              <h3>Crepe Nutella</h3>
+              <p>Crepe suave, Nutella y fresas.</p>
+              <div>
+                <strong>S/ 14.00</strong>
+                <a href="#personalizar">Personalizar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
+                alt="Mini donas"
+              />
+            </div>
+            <div class="pbody">
+              <small>Mini donas</small>
+              <h3>Mini Donas</h3>
+              <p>Tiernas, divertidas y llenas de sabor.</p>
+              <div>
+                <strong>S/ 16.50</strong>
+                <a class="add-cart" href="#carrito">Agregar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"
+                alt="Brownie con fresa"
+              />
+            </div>
+            <div class="pbody">
+              <small>Postres</small>
+              <h3>Brownie con fresa</h3>
+              <p>Brownie tibio, crema y fresa.</p>
+              <div>
+                <strong>S/ 10.00</strong>
+                <a class="add-cart" href="#carrito">Agregar +</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product">
+            <div class="picture">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXUPa26PKJyddxbretBh_6IjA0wHqwPPf-SWM9j3UN0Ne-xCxRXff34pU9&s=10"
+                alt="Combo antojito"
+              />
+              <span>Ahorra S/ 6</span>
+            </div>
+            <div class="pbody">
+              <small>Promos</small>
+              <h3>Combo Antojito</h3>
+              <p>2 vasos clásicos + mini donas.</p>
+              <div>
+                <strong>S/ 29.00</strong>
+                <a href="#pedido">Agregar +</a>
+              </div>
+            </div>
+          </article>
+            </div>
+          </div>
+
+          <aside class="cart-panel" id="carrito" aria-labelledby="cart-title">
+            <div class="cart-heading">
+              <div>
+                <p>RESUMEN DE TU ANTOJO</p>
+                <h2 id="cart-title">Tu carrito</h2>
+              </div>
+              <span class="cart-count">0</span>
+            </div>
+            <div class="cart-items" aria-live="polite">
+              <p class="cart-empty">Aún no agregas productos.<br />¡Elige tu favorito!</p>
+            </div>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong>S/ 0.00</strong>
+            </div>
+            <a class="cart-order primary" href="#pedido">Hacer pedido <span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="promos">
+        <div>
+          <p>UNA DULCE SORPRESA</p>
+          <h2>Promociones<br />para compartir</h2>
+          <p>Combos y favoritos de temporada con datos de prueba.</p>
+          <a href="#menu" class="light-btn">Ver promociones →</a>
+        </div>
+
+        <article>
+          <span>🍓</span>
+          <p>COMBO ANTOJITO</p>
+          <strong>2 vasos + mini donas</strong>
+          <b>S/ 29.00</b>
+        </article>
+      </section>
+
+      <section id="locales" class="places">
+        <div class="section-title">
+          <div>
+            <p>SIEMPRE CERQUITA DE TI</p>
+            <h2>📍 Nuestros locales</h2>
+          </div>
+        </div>
+
+        <div class="place-grid">
+          <article class="chosen">
+            <div class="place-icon">🌺</div>
+            <h3>Local Ica</h3>
+            <p>⌖ Av. Los Maestros 214, Ica</p>
+            <p>◷ Lun-Dom · 11:00 a.m. - 9:30 p.m.</p>
+            <p>☎ +51 999 900 001</p>
+            <div>
+              <a href="https://wa.me/51999900001" target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
+              <a href="https://maps.google.com/?q=Ica,Peru" target="_blank" rel="noreferrer">
+                Cómo llegar
+              </a>
+            </div>
+            <button type="button">✓ Local seleccionado</button>
+          </article>
+
+          <article>
+            <div class="place-icon">🍓</div>
+            <h3>Local Parcona</h3>
+            <p>⌖ Av. Parcona 680, Ica</p>
+            <p>◷ Lun-Dom · 12:00 p.m. - 9:00 p.m.</p>
+            <p>☎ +51 999 900 002</p>
+            <div>
+              <a href="https://wa.me/51999900002" target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
+              <a
+                href="https://maps.google.com/?q=Parcona,Ica,Peru"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cómo llegar
+              </a>
+            </div>
+            <button type="button">Elegir este local</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="fidelidad" class="loyalty">
+        <div>
+          <p>¡CADA ANTOJITO CUENTA!</p>
+          <h2>Tu tarjeta<br />de fresas</h2>
+          <p>
+            Regístrate y acumula sellos con cada visita. El equipo los valida desde
+            el panel.
+          </p>
+          <a class="primary" href="#tarjeta">Ver mi tarjeta →</a>
+        </div>
+
+        <div class="loyalty-card">
+          <span>🍓</span>
+          <small>ICA FRESA · FIDELIDAD</small>
+          <b>Tu próxima fresa<br />está más cerca</b>
+          <div>🍓 🍓 🍓 ◌ ◌ ◌ ◌ ◌ ◌ ◌</div>
+          <p>3 de 10 sellos</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#inicio">
+        <span>🍓</span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+      <p>Datos e imágenes de prueba · Proyecto base IcaFresaNuan</p>
+      <a href="#admin">☷ Acceso personal</a>
+    </footer>
+
+    <div id="pedido" class="overlay">
+      <div class="modal checkout">
+        <a class="x" href="#inicio" aria-label="Cerrar">×</a>
+        <small>ÚLTIMO PASO</small>
+        <h2>¿Cómo recibes tu antojo?</h2>
+
+        <div class="delivery">
+          <button class="picked" type="button">
+            🛵<b>Delivery</b><small>Vamos a ti</small>
+          </button>
+          <button type="button">
+            🛍️<b>Recojo</b><small>Local Ica</small>
+          </button>
+        </div>
+
+        <label>
+          Nombre
+          <input placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input placeholder="999 999 999" />
+        </label>
+        <label>
+          Dirección
+          <input placeholder="Calle, número y distrito" />
+        </label>
+
+        <a
+          class="whatsapp"
+          href="https://wa.me/51999900001"
+          target="_blank"
+          rel="noreferrer"
+        >
+          WhatsApp · enviar pedido →
+        </a>
+        <a
+          class="pedidosya"
+          href="https://www.pedidosya.com.pe/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Pedir también por PedidosYa
+        </a>
+      </div>
+    </div>
+
+    <div id="personalizar" class="overlay">
+      <div class="modal custom">
+        <a class="x" href="#menu" aria-label="Cerrar">×</a>
+        <img
+          src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=900&q=85"
+          alt="Fresas con Nutella"
+        />
+        <div>
+          <small>PERSONALIZA TU ANTOJO</small>
+          <h2>Fresas con Nutella</h2>
+          <p>Desde S/ 15.50</p>
+
+          <h4>1. Elige tamaño</h4>
+          <div class="option-row">
+            <button class="picked">Regular</button>
+            <button>Maxi + S/ 4.00</button>
+          </div>
+
+          <h4>2. Elige tu crema</h4>
+          <div class="option-row">
+            <button class="picked">Crema clásica</button>
+            <button>Crema de leche</button>
+          </div>
+
+          <h4>3. Agrega extras</h4>
+          <label class="check"><input type="checkbox" /> Oreo <span>+ S/ 2.00</span></label>
+          <label class="check"><input type="checkbox" /> Nutella <span>+ S/ 3.00</span></label>
+
+          <a class="primary full" href="#pedido">Agregar · S/ 15.50</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="tarjeta" class="overlay">
+      <div class="modal loyalty-modal">
+        <a class="x" href="#fidelidad" aria-label="Cerrar">×</a>
+        <small>FIDELIDAD ICA FRESA</small>
+        <h2>Tu antojo tiene premio</h2>
+        <p>Regístrate con datos de prueba y recibe tu tarjeta digital.</p>
+
+        <label>
+          Nombre
+          <input placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input placeholder="999 999 999" />
+        </label>
+
+        <a class="primary full" href="#fidelidad">Crear mi tarjeta →</a>
+      </div>
+    </div>
+
+    <div id="admin" class="overlay">
+      <div class="modal admin-login">
+        <a class="x" href="#inicio" aria-label="Cerrar">×</a>
+        <span>🍓</span>
+        <h2>Panel IcaFresaNuan</h2>
+        <p>Acceso demo para personal.</p>
+        <input placeholder="Usuario" value="equipo" />
+        <input type="password" placeholder="Contraseña" value="1234" />
+        <a class="primary full" href="#inicio">Ingresar</a>
+        <small>Demo: equipo / 1234</small>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".filters button").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".filters button").forEach((filter) => {
+            const isSelected = filter === button;
+            filter.classList.toggle("selected", isSelected);
+            filter.setAttribute("aria-pressed", isSelected);
+          });
+        });
+      });
+
+      const storeStatus = document.querySelector(".store-status");
+      const statusLabel = storeStatus.querySelector(".status-label");
+
+      const toggleStoreStatus = () => {
+        const isOpen = storeStatus.classList.toggle("is-open");
+        storeStatus.classList.toggle("is-closed", !isOpen);
+        statusLabel.textContent = isOpen ? "Abierto" : "Cerrado";
+        storeStatus.setAttribute("aria-pressed", isOpen);
+      };
+
+      storeStatus.addEventListener("click", toggleStoreStatus);
+      window.setInterval(toggleStoreStatus, 5000);
+
+      const cart = new Map();
+      const cartItems = document.querySelector(".cart-items");
+      const cartCount = document.querySelector(".cart-count");
+      const headerCartCount = document.querySelector(".cart-pill em");
+      const cartTotal = document.querySelector(".cart-total strong");
+
+      const formatPrice = (price) => `S/ ${price.toFixed(2)}`;
+
+      const renderCart = () => {
+        const items = [...cart.values()];
+        const itemCount = items.reduce((total, item) => total + item.quantity, 0);
+        const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+        cartCount.textContent = itemCount;
+        headerCartCount.textContent = itemCount;
+        cartTotal.textContent = formatPrice(total);
+        cartItems.innerHTML = items.length
+          ? items
+              .map(
+                (item) => `
+                  <div class="cart-item">
+                    <strong>${item.name}</strong>
+                    <b>${formatPrice(item.price * item.quantity)}</b>
+                    <button class="remove-item" type="button" data-product="${item.name}" aria-label="Eliminar ${item.name}">×</button>
+                    <small>${item.quantity} x ${formatPrice(item.price)}</small>
+                  </div>`
+              )
+              .join("")
+          : '<p class="cart-empty">Aún no agregas productos.<br />¡Elige tu favorito!</p>';
+      };
+
+      document.querySelectorAll(".add-cart").forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          const product = button.closest(".product");
+          const name = product.querySelector("h3").textContent;
+          const price = Number(product.querySelector("strong").textContent.replace("S/", "").trim());
+          const current = cart.get(name) || { name, price, quantity: 0 };
+
+          current.quantity += 1;
+          cart.set(name, current);
+          renderCart();
+        });
+      });
+
+      cartItems.addEventListener("click", (event) => {
+        const removeButton = event.target.closest(".remove-item");
+        if (!removeButton) return;
+
+        cart.delete(removeButton.dataset.product);
+        renderCart();
+      });
+
+      renderCart();
+    </script>
+  </body>
+</html>
+
