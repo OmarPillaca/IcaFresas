@@ -1,0 +1,623 @@
+/* inicio.css — Estilos de la página de inicio. */
+
+.hero {
+  width: min(calc(100% - 32px), 860px);
+  margin: 20px auto;
+  min-height: 280px;
+  display: grid;
+  grid-template-columns: 49% 51%;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fdc9d4;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 60%;
+  background: url("../img/wdwq.png") center center / cover no-repeat;
+  pointer-events: none;
+}
+
+.hero-wave {
+  position: absolute;
+  width: 145px;
+  height: 105px;
+  background: #e7225d;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-wave-top-left {
+  top: -42px;
+  left: -32px;
+  border-radius: 18% 82% 44% 56% / 30% 38% 62% 70%;
+  transform: rotate(-16deg);
+}
+
+.hero-wave-top-right {
+  background: #a1d86d;
+  top: -80px;
+  right: -56px;
+  width: 170px;
+  height: 120px;
+  border-radius: 72% 28% 63% 37% / 45% 35% 65% 55%;
+  transform: rotate(12deg);
+}
+
+.hero-wave-bottom-left {
+  bottom: -44px;
+  left: -38px;
+  width: 165px;
+  height: 112px;
+  border-radius: 64% 36% 22% 78% / 48% 62% 38% 52%;
+  transform: rotate(13deg);
+}
+
+.hero-copy {
+  padding: 40px 8%;
+  z-index: 2;
+}
+
+.hero-title-image {
+  display: block;
+  width: min(100%, 380px);
+  height: auto;
+  margin: 9px 0;
+}
+
+.store-status {
+  --status-color: #24a148;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 18px 0 30px 50px;
+  padding: 8px 14px;
+  border: 2px solid var(--status-color);
+  border-radius: 22px;
+  background: transparent;
+  color: var(--status-color);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.store-status.is-closed {
+  --status-color: #d92d43;
+}
+
+.status-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+
+.status-copy small {
+  margin-top: 3px;
+  color: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.status-light {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 50%;
+  background: var(--status-color);
+  box-shadow: 0 0 10px var(--status-color);
+}
+
+.hero-art {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cup {
+  font-size: 145px;
+  filter: drop-shadow(0 12px 8px #9b164644);
+}
+
+/* ---------- Favoritos ---------- */
+
+.featured {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 6%;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.section-title p,
+.promos > div > p,
+.loyalty > div > p:first-child {
+  font-size: 11px;
+  color: var(--pink);
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  margin: 0;
+}
+
+.section-title h2 {
+  font-size: 28px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.featured-grid .product {
+  border-radius: 17px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition: 0.2s;
+}
+
+.featured-grid .product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px #d53d5920;
+}
+
+.featured-grid .picture {
+  height: 150px;
+  position: relative;
+  background: #f8cbd4;
+}
+
+.featured-grid .picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-grid .picture span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--pink);
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 13px;
+  font-size: 10px;
+}
+
+.featured-grid .pbody {
+  padding: 12px;
+}
+
+.featured-grid .pbody small {
+  color: var(--pink);
+  font-weight: 900;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.featured-grid .pbody h3 {
+  margin: 3px 0;
+  font-size: 16px;
+}
+
+.featured-grid .pbody > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.featured-grid .pbody strong {
+  color: var(--pink);
+  font-size: 15px;
+}
+
+.featured-grid .pbody a {
+  font-size: 11px;
+  padding: 7px 10px;
+  border-radius: 16px;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 900;
+}
+
+/* ---------- Promos ---------- */
+
+.promos {
+  background: linear-gradient(110deg, #e62b61, #a91447);
+  color: white;
+  min-height: 280px;
+  padding: 38px 14%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.promos h2 {
+  font-size: 36px;
+  color: white;
+}
+
+.promos > div > p:first-child {
+  color: #ffbecd;
+}
+
+.promos > div > p:not(:first-child) {
+  max-width: 340px;
+}
+
+.light-btn {
+  display: inline-flex;
+  padding: 12px 16px;
+  border: 1px solid white;
+  border-radius: 24px;
+  font-weight: 900;
+  gap: 8px;
+}
+
+.promos article {
+  background: #ffe9b9;
+  color: #622517;
+  border-radius: 23px;
+  padding: 20px 28px;
+  display: grid;
+  text-align: center;
+  transform: rotate(4deg);
+  box-shadow: 10px 10px #f996ae;
+  min-width: 220px;
+}
+
+.promos article span {
+  font-size: 55px;
+}
+
+.promos article p {
+  font-size: 11px;
+  margin: 3px;
+  font-weight: 900;
+}
+
+.promos article strong {
+  font-size: 22px;
+}
+
+.promos article b {
+  font-size: 20px;
+  color: var(--pink);
+  margin-top: 8px;
+}
+
+/* ---------- Locales ---------- */
+
+.places {
+  max-width: 1280px;
+  margin: auto;
+  padding: 54px 6%;
+}
+
+.place-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.place-grid article {
+  padding: 25px;
+  border: 2px solid var(--line);
+  border-radius: 22px;
+  background: #fff8f9;
+}
+
+.place-grid article.chosen {
+  border-color: var(--pink);
+  box-shadow: 0 8px 20px #e6225d18;
+}
+
+.place-icon {
+  font-size: 40px;
+}
+
+.place-grid h3 {
+  font-size: 24px;
+  margin: 6px 0;
+}
+
+.place-grid p {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.place-grid article > div:not(.place-icon) {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+
+.place-grid a {
+  background: #fff;
+  color: var(--pink);
+  font-weight: 900;
+  border: 1px solid var(--pink);
+  padding: 8px 12px;
+  border-radius: 18px;
+  font-size: 12px;
+}
+
+.place-grid article > button {
+  padding: 10px 13px;
+  border-radius: 18px;
+  color: white;
+  background: var(--pink);
+  font-weight: 900;
+}
+
+.place-grid article > button.selected {
+  background: #24a148;
+}
+
+/* ---------- Fidelidad ---------- */
+
+.loyalty {
+  padding: 54px 13%;
+  background: #fff1d8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+}
+
+.loyalty h2 {
+  font-size: 37px;
+}
+
+.loyalty > div > p:not(:first-child) {
+  max-width: 350px;
+}
+
+.loyalty-card {
+  width: 360px;
+  min-height: 210px;
+  padding: 23px;
+  background: linear-gradient(135deg, #e82962, #a91343);
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 12px 12px #f2be40;
+  position: relative;
+}
+
+.loyalty-card > span {
+  font-size: 35px;
+  position: absolute;
+  right: 20px;
+  top: 14px;
+}
+
+.loyalty-card small {
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.loyalty-card b {
+  display: block;
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+.loyalty-card p {
+  margin: 5px 0;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.loyalty-card.is-active {
+  outline: 3px solid #f2be40;
+  outline-offset: 3px;
+}
+
+.loyalty-logout {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 9px 14px;
+  border-radius: 18px;
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.loyalty-logout:hover {
+  background: #ffe2e7;
+}
+
+/* ---------- Modal tarjeta ---------- */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #3d1e21a1;
+  z-index: 30;
+  place-items: center;
+  padding: 20px;
+}
+
+.overlay:target {
+  display: grid;
+}
+
+.modal {
+  position: relative;
+  background: #fffafa;
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.modal small {
+  color: var(--pink);
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+.modal h2 {
+  font-size: 29px;
+  margin-top: 4px;
+}
+
+.x {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+  background: var(--line);
+  color: var(--pink);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}
+
+.loyalty-modal {
+  text-align: center;
+}
+
+.loyalty-modal label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.loyalty-modal input {
+  padding: 11px;
+  border: 1px solid #f3cdd4;
+  border-radius: 11px;
+}
+
+.loyalty-modal .full {
+  margin-top: 16px;
+}
+
+/* ---------- Login de tarjetas ---------- */
+
+.auth-switch {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0 4px;
+}
+
+.auth-switch button {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fff0f2;
+  color: #8a4b50;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.auth-switch button.selected {
+  background: var(--pink);
+  color: #fff;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.auth-form input {
+  padding: 11px;
+  border: 1px solid #f3cdd4;
+  border-radius: 11px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    width: calc(100% - 24px);
+    grid-template-columns: 100%;
+    min-height: 390px;
+    background: #ffd8de;
+  }
+
+  .hero::after {
+    width: 100%;
+    opacity: 0.95;
+  }
+
+  .hero-title-image {
+    width: min(100%, 300px);
+  }
+
+  .cup {
+    font-size: 112px;
+  }
+
+  .featured-grid {
+    gap: 10px;
+  }
+
+  .promos {
+    padding: 35px 8%;
+    display: block;
+  }
+
+  .promos article {
+    margin: 32px auto 0;
+    width: 220px;
+  }
+
+  .place-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loyalty {
+    padding: 40px 8%;
+    display: grid;
+  }
+
+  .loyalty-card {
+    width: 100%;
+  }
+}

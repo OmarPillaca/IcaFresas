@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ica Fresa | Menú</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="productos.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../inicio/inicio.html">
+        <span><img src="../img/icon.png" alt="" /></span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+      <nav>
+        <a href="../inicio/inicio.html">Inicio</a>
+        <a href="productos.html">Menú</a>
+        <a href="../inicio/inicio.html#locales">Locales</a>
+        <a href="../admin/admin.html">☷ Admin</a>
+      </nav>
+      <a class="cart-pill" href="../pedido/pedido.html">🛒<em id="cartBadge">0</em></a>
+    </header>
+
+    <main>
+      <section class="catalog">
+        <div class="section-title">
+          <div>
+            <p>HECHO CON MUCHO AMOR</p>
+            <h2>✨ Nuestro menú</h2>
+          </div>
+          <input id="searchInput" class="search" type="search" placeholder="🔍 Buscar antojo..." />
+        </div>
+
+        <div class="filters" id="filters"></div>
+
+        <div class="catalog-layout">
+          <div class="catalog-products">
+            <div class="grid" id="productGrid"></div>
+          </div>
+
+          <aside class="cart-panel">
+            <div class="cart-heading">
+              <div>
+                <p>RESUMEN DE TU ANTOJO</p>
+                <h2>Tu carrito</h2>
+              </div>
+              <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="cart-items" id="cartItems" aria-live="polite"></div>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong id="cartTotal">S/ 0.00</strong>
+            </div>
+            <a class="cart-order primary" href="../pedido/pedido.html">Hacer pedido <span>→</span></a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="overlay" id="customOverlay">
+      <div class="modal custom">
+        <button class="x" id="closeCustom" aria-label="Cerrar">×</button>
+        <img id="customImg" src="" alt="" />
+        <div>
+          <small>PERSONALIZA TU ANTOJO</small>
+          <h2 id="customName">Producto</h2>
+          <p id="customBase">Desde S/ 0.00</p>
+
+          <h4>1. Elige tamaño</h4>
+          <div class="option-row" id="sizeRow">
+            <button class="picked" data-extra="0">Regular</button>
+            <button data-extra="4">Maxi + S/ 4.00</button>
+          </div>
+
+          <h4>2. Elige tu crema</h4>
+          <div class="option-row" id="cremaRow"></div>
+
+          <h4>3. Agrega toppings</h4>
+          <div id="toppingList"></div>
+
+          <button class="primary full" id="addToCart">Agregar · S/ 0.00</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="productos.js"></script>
+  </body>
+</html>

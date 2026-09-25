@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ica Fresa | Pedido</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="pedido.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../inicio/inicio.html">
+        <span><img src="../img/icon.png" alt="" /></span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+      <nav>
+        <a href="../inicio/inicio.html">Inicio</a>
+        <a href="../productos/productos.html">Menú</a>
+        <a href="../admin/admin.html">☷ Admin</a>
+      </nav>
+      <a class="cart-pill" href="../productos/productos.html">🛒<em id="cartBadge">0</em></a>
+    </header>
+
+    <main class="checkout-page">
+      <section class="checkout">
+        <small>ÚLTIMO PASO</small>
+        <h2>¿Cómo recibes tu antojo?</h2>
+
+        <div class="delivery" id="deliveryMode">
+          <button class="picked" type="button" data-mode="delivery">
+            🛵<b>Delivery</b><small>Vamos a ti</small>
+          </button>
+          <button type="button" data-mode="recojo">
+            🛍️<b>Recojo</b><small>En el local</small>
+          </button>
+        </div>
+
+        <label>
+          Nombre
+          <input id="fNombre" placeholder="Tu nombre" />
+        </label>
+        <label>
+          Teléfono
+          <input id="fTelefono" placeholder="999 999 999" />
+        </label>
+        <label id="direccionField">
+          Dirección
+          <input id="fDireccion" placeholder="Calle, número y distrito" />
+        </label>
+        <label id="localField" class="hidden">
+          Local de recojo
+          <select id="fLocal"></select>
+        </label>
+        <label>
+          Nota para el local (opcional)
+          <input id="fNota" placeholder="Ej. sin azúcar extra" />
+        </label>
+
+        <div class="summary" id="orderSummary"></div>
+
+        <button class="whatsapp" id="sendWhatsapp">WhatsApp · enviar pedido →</button>
+        <button class="save" id="saveOrder">Guardar pedido (demo) ·</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="../inicio/inicio.html">
+        <span>🍓</span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+      <p>Datos guardados en tu navegador · Proyecto Ica Fresa</p>
+      <a href="../admin/admin.html">☷ Acceso personal</a>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="pedido.js"></script>
+  </body>
+</html>

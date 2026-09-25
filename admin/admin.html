@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ica Fresa | Panel de administrador</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+
+  <body>
+    <!-- Login (visible si no hay sesión) -->
+    <section id="loginView" class="login-view">
+      <form class="login-card" id="loginForm">
+        <span>🍓</span>
+        <h2>Panel Ica Fresa</h2>
+        <p>Acceso para personal.</p>
+        <input id="loginUser" placeholder="Usuario" autocomplete="username" />
+        <input id="loginPass" type="password" placeholder="Contraseña" autocomplete="current-password" />
+        <button class="primary full" type="submit">Ingresar</button>
+        <small>Demo: equipo / 1234</small>
+      </form>
+    </section>
+
+    <!-- Panel (visible tras iniciar sesión) -->
+    <main id="panelView" class="hidden">
+      <header class="site-header">
+        <a class="brand" href="../inicio/inicio.html">
+          <span><img src="../img/icon.png" alt="" /></span>
+          <b>ICA FRESA</b>
+          <small>PANEL</small>
+        </a>
+        <nav id="adminTabs">
+          <button data-tab="productos" class="selected">Productos</button>
+          <button data-tab="toppings">Toppings</button>
+          <button data-tab="cremas">Cremas</button>
+          <button data-tab="fidelidad">🍓 Fidelidad</button>
+          <button data-tab="pedidos">Pedidos</button>
+          <button data-tab="config">Configuración</button>
+        </nav>
+        <button class="primary ghost" id="logoutBtn">Salir</button>
+      </header>
+
+      <!-- Productos -->
+      <section class="tab open" id="tab-productos">
+        <div class="tab-head">
+          <h2>🍓 Productos</h2>
+          <button class="primary" id="newProduct">+ Nuevo producto</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="productRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Toppings -->
+      <section class="tab" id="tab-toppings">
+        <div class="tab-head">
+          <h2>🍫 Toppings</h2>
+          <button class="primary" id="newTopping">+ Nuevo topping</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Nombre</th><th>Precio extra</th><th>Disponible</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="toppingRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Cremas -->
+      <section class="tab" id="tab-cremas">
+        <div class="tab-head">
+          <h2>🍦 Cremas</h2>
+          <button class="primary" id="newCrema">+ Nueva crema</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Nombre</th><th>Disponible</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="cremaRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Fidelidad -->
+      <section class="tab" id="tab-fidelidad">
+        <div class="tab-head">
+          <h2>🍓 Tarjetas de fidelidad</h2>
+          <button class="primary" id="newTarjeta">+ Nueva tarjeta</button>
+        </div>
+        <p class="tab-note">Cada compra suma 1 fresa 🍓. A las 10 fresas la clienta canjea su premio (botón “Canjear premio”).</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Clienta</th>
+                <th>Teléfono</th>
+                <th>Sellos</th>
+                <th>Compras</th>
+                <th>Canjes</th>
+                <th>Creada</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tarjetaRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Configuración / locales / categorías -->
+      <section class="tab" id="tab-config">
+        <div class="tab-head"><h2>⚙️ Configuración de la tienda</h2></div>
+
+        <div class="config-grid">
+          <div class="config-card">
+            <h3>Estado del local</h3>
+            <label class="switch-row">
+              <input type="checkbox" id="cfgAbierto" />
+              <span>Tienda abierta ahora</span>
+            </label>
+            <label>Texto del horario
+              <input id="cfgHorario" placeholder="1 p. m. - 10 p. m." />
+            </label>
+            <label>WhatsApp de pedidos (solo número)
+              <input id="cfgWhatsapp" placeholder="51999900001" />
+            </label>
+            <label>Nombre del negocio
+              <input id="cfgNombre" />
+            </label>
+            <button class="primary" id="saveConfig">Guardar configuración</button>
+          </div>
+
+          <div class="config-card">
+            <h3>Locales</h3>
+            <div id="localeList"></div>
+            <button class="primary ghost" id="newLocale">+ Agregar local</button>
+          </div>
+
+          <div class="config-card">
+            <h3>Categorías del menú</h3>
+            <div id="catList"></div>
+            <form id="catForm" class="inline-form">
+              <input id="catName" placeholder="Nueva categoría" />
+              <button class="primary" type="submit">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pedidos -->
+      <section class="tab" id="tab-pedidos">
+        <div class="tab-head"><h2>🧾 Pedidos guardados</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Fecha</th><th>Cliente</th><th>Modo</th><th>Total</th><th>Estado</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="pedidoRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal de producto -->
+    <div class="overlay" id="productOverlay">
+      <form class="modal" id="productForm">
+        <button class="x" type="button" id="closeProduct" aria-label="Cerrar">×</button>
+        <small id="productFormTitle">NUEVO PRODUCTO</small>
+        <h2 id="productFormName">Producto</h2>
+
+        <label>Nombre
+          <input id="pNombre" required />
+        </label>
+        <label>Categoría
+          <select id="pCategoria"></select>
+        </label>
+        <label>Descripción
+          <input id="pDescripcion" />
+        </label>
+        <label>Precio (S/)
+          <input id="pPrecio" type="number" step="0.10" min="0" required />
+        </label>
+        <label>Etiqueta (ej. Favorito)
+          <input id="pEtiqueta" placeholder="Opcional" />
+        </label>
+
+        <label>Imagen por URL
+          <input id="pImagenUrl" placeholder="https://..." />
+        </label>
+        <label>O subir desde la computadora
+          <input id="pImagenFile" type="file" accept="image/*" />
+        </label>
+        <img id="pPreview" class="preview" alt="" />
+
+        <label class="switch-row">
+          <input type="checkbox" id="pPersonalizable" />
+          <span>Permite personalización (crema y toppings)</span>
+        </label>
+        <label class="switch-row">
+          <input type="checkbox" id="pDisponible" checked />
+          <span>Disponible en el menú</span>
+        </label>
+        <label class="switch-row">
+          <input type="checkbox" id="pAgotado" />
+          <span>Agotado</span>
+        </label>
+
+        <button class="primary full" type="submit">Guardar producto</button>
+      </form>
+    </div>
+
+    <!-- Modal de tarjeta de fidelidad -->
+    <div class="overlay" id="tarjetaOverlay">
+      <form class="modal" id="tarjetaForm">
+        <button class="x" type="button" id="closeTarjeta" aria-label="Cerrar">×</button>
+        <small>TARJETA DE FIDELIDAD</small>
+        <h2 id="tarjetaFormName">Nueva tarjeta</h2>
+        <label>Nombre de la clienta <input id="tcNombre" required /></label>
+        <label>Teléfono (es su usuario para entrar) <input id="tcTelefono" required /></label>
+        <label>Clave <input id="tcClave" required /></label>
+        <label>Fresas en la tarjeta (sellos) <input id="tcSellos" type="number" min="0" max="10" required /></label>
+        <label>Compras totales <input id="tcCompras" type="number" min="0" required /></label>
+        <label class="switch-row">
+          <input type="checkbox" id="tcClaveVisible" />
+          <span>Mostrar clave</span>
+          <button type="button" class="mini-btn" id="genClave">Generar clave</button>
+        </label>
+        <button class="primary full" type="submit">Guardar tarjeta</button>
+      </form>
+    </div>
+
+    <!-- Modal de topping -->
+    <div class="overlay" id="toppingOverlay">
+      <form class="modal" id="toppingForm">
+        <button class="x" type="button" id="closeTopping" aria-label="Cerrar">×</button>
+        <small>TOPPING</small>
+        <h2 id="toppingFormName">Nuevo topping</h2>
+        <label>Nombre <input id="tNombre" required /></label>
+        <label>Precio extra (S/) <input id="tPrecio" type="number" step="0.10" min="0" required /></label>
+        <label class="switch-row">
+          <input type="checkbox" id="tDisponible" checked />
+          <span>Disponible</span>
+        </label>
+        <button class="primary full" type="submit">Guardar topping</button>
+      </form>
+    </div>
+
+    <!-- Modal de crema -->
+    <div class="overlay" id="cremaOverlay">
+      <form class="modal" id="cremaForm">
+        <button class="x" type="button" id="closeCrema" aria-label="Cerrar">×</button>
+        <small>CREMA</small>
+        <h2 id="cremaFormName">Nueva crema</h2>
+        <label>Nombre <input id="cNombre" required /></label>
+        <label class="switch-row">
+          <input type="checkbox" id="cDisponible" checked />
+          <span>Disponible</span>
+        </label>
+        <button class="primary full" type="submit">Guardar crema</button>
+      </form>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

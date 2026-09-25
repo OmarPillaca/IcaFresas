@@ -1,0 +1,256 @@
+/* global.css — Variables, reset suave y componentes compartidos (header, footer, toasts). */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat+Brush&display=swap");
+
+:root {
+  --pink: #e7225d;
+  --pink-dark: #a91447;
+  --ink: #34201d;
+  --cream: #fffdfc;
+  --card: #fff7f7;
+  --line: #ffe4e8;
+  --muted: #765c59;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Nunito, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-family: "Caveat Brush", cursive;
+  color: #572117;
+  margin: 0;
+  line-height: 1.13;
+}
+
+/* ---------- Botones base ---------- */
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--pink);
+  color: white;
+  border-radius: 26px;
+  font-weight: 900;
+}
+
+.primary.ghost {
+  background: #fff;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+}
+
+.primary.full {
+  width: 100%;
+}
+
+/* ---------- Utilidades ---------- */
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  min-height: 74px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: #fffaf9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: grid;
+  grid-template-columns: 48px auto;
+  gap: 0 10px;
+  align-items: center;
+  line-height: 1;
+}
+
+.brand span {
+  grid-row: span 2;
+  width: 48px;
+  height: 48px;
+}
+
+.brand span img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand b {
+  color: var(--pink);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.brand small {
+  display: block;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.site-header nav a {
+  font-weight: 800;
+  font-size: 14px;
+  color: #542923;
+}
+
+.cart-pill {
+  margin-left: auto;
+  width: 74px;
+  height: 54px;
+  border-radius: 28px;
+  background: var(--pink);
+  color: white;
+  position: relative;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 20px;
+}
+
+.cart-pill em {
+  position: absolute;
+  right: 6px;
+  top: 5px;
+  background: #fff;
+  color: var(--pink);
+  font-style: normal;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 3px 6px;
+}
+
+/* ---------- Toast ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%) translateY(20px);
+  background: #34201d;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 22px;
+  font-weight: 800;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 90;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  background: #b3123e;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 28px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  background: #552019;
+  color: #ffe5df;
+}
+
+.site-footer .brand b {
+  color: #fff;
+}
+
+.site-footer p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.site-footer > a:last-child {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    min-height: 68px;
+    padding: 0 5%;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .site-header nav {
+    order: 3;
+    width: 100%;
+    gap: 18px;
+    overflow-x: auto;
+  }
+
+  .cart-pill {
+    width: 50px;
+    height: 42px;
+    padding-top: 9px;
+  }
+
+  .site-footer {
+    display: grid;
+    gap: 12px;
+    text-align: center;
+  }
+}

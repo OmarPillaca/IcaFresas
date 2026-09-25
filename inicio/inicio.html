@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ica Fresa, fresas con crema y antojos dulces." />
+    <title>Ica Fresa | Inicio</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="inicio.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="inicio.html">
+        <span><img src="../img/icon.png" alt="" /></span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+      <nav>
+        <a href="inicio.html">Inicio</a>
+        <a href="../productos/productos.html">Menú</a>
+        <a href="#locales">Locales</a>
+        <a href="#fidelidad">Contacto</a>
+      </nav>
+      <a class="cart-pill" href="../pedido/pedido.html">🛒<em id="cartBadge">0</em></a>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <span class="hero-wave hero-wave-top-left" aria-hidden="true"></span>
+        <span class="hero-wave hero-wave-top-right" aria-hidden="true"></span>
+        <span class="hero-wave hero-wave-bottom-left" aria-hidden="true"></span>
+        <div class="hero-copy">
+          <img class="hero-title-image" src="../img/frs.png" alt="Ica Fresa" />
+          <button class="store-status" type="button" id="storeStatus">
+            <span class="status-light" aria-hidden="true"></span>
+            <span class="status-copy">
+              <span class="status-label">Abierto</span>
+              <small id="storeHours">1 p. m. - 10 p. m.</small>
+            </span>
+          </button>
+        </div>
+        <div class="hero-art">
+          <span class="cup"></span>
+        </div>
+      </section>
+
+      <section class="featured">
+        <div class="section-title">
+          <div>
+            <p>HECHO CON MUCHO AMOR</p>
+            <h2>✨ Favoritos de la casa</h2>
+          </div>
+          <a class="primary ghost" href="../productos/productos.html">Ver todo el menú →</a>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+      </section>
+
+      <section class="promos">
+        <div>
+          <p>UNA DULCE SORPRESA</p>
+          <h2>Promociones<br />para compartir</h2>
+          <p>Combos y favoritos de temporada, administrados desde el panel.</p>
+          <a href="../productos/productos.html?cat=Promos" class="light-btn">Ver promociones →</a>
+        </div>
+        <article id="promoCard"></article>
+      </section>
+
+      <section id="locales" class="places">
+        <div class="section-title">
+          <div>
+            <p>SIEMPRE CERQUITA DE TI</p>
+            <h2>📍 Nuestros locales</h2>
+          </div>
+        </div>
+        <div class="place-grid" id="placeGrid"></div>
+      </section>
+
+      <section id="fidelidad" class="loyalty">
+        <div>
+          <p>¡CADA ANTOJITO CUENTA!</p>
+          <h2>Tu tarjeta<br />de fresas</h2>
+          <p>Ingresa con tu teléfono y clave, o crea tu tarjeta. Cada compra suma 1 fresa 🍓 y a las 10 canjeas tu premio.</p>
+          <a class="primary" href="#tarjeta" id="loyaltyCta">Ingresar / Crear tarjeta →</a>
+          <button class="loyalty-logout hidden" id="loyaltyLogout" type="button">Cerrar sesión</button>
+        </div>
+        <div class="loyalty-card">
+          <span>🍓</span>
+          <small>ICA FRESA · FIDELIDAD</small>
+          <b id="loyaltyCardTitle">Tu próxima fresa<br />está más cerca</b>
+          <div id="stampBar">◌ ◌ ◌ ◌ ◌ ◌ ◌ ◌ ◌ ◌</div>
+          <p id="stampCounter">Ingresa para ver tus sellos</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="inicio.html">
+        <span>🍓</span>
+        <b>ICA FRESA</b>
+        <small>FRESAS CON CREMA</small>
+      </a>
+      <p>Datos guardados en tu navegador · Proyecto Ica Fresa</p>
+      <a href="../admin/admin.html">☷ Acceso personal</a>
+    </footer>
+
+    <div id="tarjeta" class="overlay">
+      <div class="modal loyalty-modal">
+        <a class="x" href="#" aria-label="Cerrar">×</a>
+        <small>FIDELIDAD ICA FRESA</small>
+        <h2>Tu antojo tiene premio</h2>
+
+        <div class="auth-switch">
+          <button type="button" id="tabIngresar" class="selected">Ya tengo tarjeta</button>
+          <button type="button" id="tabCrear">Crear tarjeta</button>
+        </div>
+
+        <form id="loginTarjetaForm" class="auth-form">
+          <label>Teléfono <input id="loginTelefono" placeholder="999 999 999" /></label>
+          <label>Clave <input id="loginClave" type="password" placeholder="Tu clave" /></label>
+          <button class="primary full" type="submit">Ingresar →</button>
+        </form>
+
+        <form id="registroForm" class="auth-form hidden">
+          <label>Nombre <input id="loyaltyName" placeholder="Tu nombre" /></label>
+          <label>Teléfono <input id="loyaltyPhone" placeholder="999 999 999" /></label>
+          <label>Clave <input id="loyaltyClave" type="password" placeholder="Crea una clave" /></label>
+          <button class="primary full" type="submit">Crear mi tarjeta →</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="inicio.js"></script>
+  </body>
+</html>

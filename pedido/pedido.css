@@ -1,0 +1,129 @@
+/* pedido.css — Estilos del checkout. */
+
+.checkout-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 6%;
+}
+
+.checkout small {
+  color: var(--pink);
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+.checkout h2 {
+  font-size: 32px;
+  margin: 4px 0 18px;
+}
+
+.delivery {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.delivery button {
+  flex: 1;
+  padding: 12px;
+  background: #fff1f3;
+  border: 1px solid #f3cbd2;
+  border-radius: 14px;
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+}
+
+.delivery button.picked {
+  background: #ffe2e7;
+  border: 2px solid var(--pink);
+}
+
+.delivery small {
+  font-size: 10px;
+}
+
+.checkout label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.checkout input,
+.checkout select {
+  padding: 11px;
+  border: 1px solid #f3cdd4;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.checkout input:focus,
+.checkout select:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+.hidden {
+  display: none;
+}
+
+.summary {
+  margin: 18px 0;
+  padding: 16px;
+  background: #fff0f3;
+  border: 1px solid #ffd9e1;
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+.summary .line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.summary .line.total {
+  border-top: 1px solid #f7cfd8;
+  margin-top: 8px;
+  padding-top: 10px;
+  font-weight: 900;
+}
+
+.summary .line.total strong {
+  color: var(--pink);
+  font-size: 16px;
+}
+
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 22px;
+  background: #23a569;
+  color: white;
+  border-radius: 26px;
+  font-weight: 900;
+}
+
+.save {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #fff;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  border-radius: 22px;
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .checkout-page {
+    padding: 26px 5%;
+  }
+}

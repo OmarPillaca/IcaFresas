@@ -1,0 +1,394 @@
+/* admin.css — Estilos del panel de administrador. */
+
+.login-view {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #fde3ea, #fff6e9);
+  padding: 20px;
+}
+
+.login-card {
+  background: #fffafa;
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: center;
+  display: grid;
+  gap: 12px;
+  width: min(100%, 380px);
+  box-shadow: 0 18px 40px #d53d5920;
+}
+
+.login-card span {
+  font-size: 48px;
+}
+
+.login-card h2 {
+  font-size: 36px;
+}
+
+.login-card input {
+  padding: 12px;
+  border: 1px solid #f3cdd4;
+  border-radius: 12px;
+}
+
+.login-card small {
+  color: #93666b;
+}
+
+#panelView.hidden,
+.hidden {
+  display: none;
+}
+
+#adminTabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+#adminTabs button {
+  padding: 9px 15px;
+  border-radius: 20px;
+  background: #fff0f2;
+  color: #8a4b50;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+#adminTabs button.selected {
+  background: var(--pink);
+  color: white;
+}
+
+.tab {
+  display: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 5% 60px;
+}
+
+.tab.open {
+  display: block;
+}
+
+.tab-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.tab-head h2 {
+  font-size: 30px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid #ffeef1;
+}
+
+th {
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #93666b;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+td img.thumb {
+  width: 52px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f8cbd4;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 900;
+  background: #eaf7ef;
+  color: #1f7a3d;
+}
+
+.badge.off {
+  background: #fdeaea;
+  color: #b3123e;
+}
+
+.badge.soldout {
+  background: #fff3e0;
+  color: #a05a00;
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.row-actions button {
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 900;
+  background: #fff0f2;
+  color: #8a4b50;
+}
+
+.row-actions button.danger {
+  background: #fdeaea;
+  color: #b3123e;
+}
+
+.row-actions button.reward {
+  background: #fff3e0;
+  color: #a05a00;
+}
+
+/* ---------- Fidelidad ---------- */
+
+.tab-note {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.stamp-cell {
+  display: grid;
+  gap: 3px;
+}
+
+.stamp-icons {
+  font-size: 15px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.stamp-cell small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.mini-btn {
+  margin-left: auto;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 900;
+  background: #fff0f2;
+  color: var(--pink);
+  border: 1px solid #f3cdd4;
+}
+
+.mini-btn:hover {
+  background: #ffe2e7;
+}
+
+/* ---------- Config ---------- */
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.config-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.config-card h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.config-card label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.config-card input {
+  padding: 10px;
+  border: 1px solid #f3cdd4;
+  border-radius: 10px;
+}
+
+.switch-row {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  grid-auto-flow: column;
+}
+
+.switch-row input {
+  accent-color: var(--pink);
+  width: 17px;
+  height: 17px;
+}
+
+.locale-item,
+.cat-item {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #ffe4e8;
+  border-radius: 14px;
+  background: #fff8f9;
+}
+
+.locale-item input {
+  padding: 8px;
+  border: 1px solid #f3cdd4;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.locale-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+}
+
+.inline-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #f3cdd4;
+  border-radius: 10px;
+}
+
+.cat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+}
+
+/* ---------- Modal ---------- */
+
+.switch-row .mini-btn {
+  margin-left: auto;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #3d1e21a1;
+  z-index: 40;
+  place-items: center;
+  padding: 20px;
+}
+
+.overlay.open {
+  display: grid;
+}
+
+.modal {
+  position: relative;
+  background: #fffafa;
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 460px;
+  width: 100%;
+  max-height: 92vh;
+  overflow: auto;
+  display: grid;
+  gap: 4px;
+}
+
+.modal small {
+  color: var(--pink);
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+.modal h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.modal label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.modal input {
+  padding: 10px;
+  border: 1px solid #f3cdd4;
+  border-radius: 10px;
+}
+
+.modal .x {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+  background: var(--line);
+  color: var(--pink);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}
+
+.preview {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #f8cbd4;
+  margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+  .tab {
+    padding: 22px 4% 50px;
+  }
+
+  .locale-row {
+    grid-template-columns: 1fr;
+  }
+}
